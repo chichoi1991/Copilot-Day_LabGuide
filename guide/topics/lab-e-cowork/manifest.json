@@ -1,0 +1,43 @@
+{
+  "title": "lab-e-cowork",
+  "description": "",
+  "estimatedMinutes": null,
+  "steps": [
+    {
+      "id": "1",
+      "title": "1단계: 준비 — M365 Copilot 라이선스 및 Copilot Cowork 확인",
+      "file": "steps/1-1단계-준비-m365-copilot-라이선스-및-copilot-cowork-확인.md",
+      "checks": []
+    },
+    {
+      "id": "2",
+      "title": "2단계: Copilot Cowork에서 Skill 확인",
+      "file": "steps/2-2단계-copilot-cowork에서-skill-확인.md",
+      "checks": []
+    },
+    {
+      "id": "3",
+      "title": "3단계: 나만의 SKILL 작성",
+      "file": "steps/3-3단계-나만의-skill-작성.md",
+      "checks": []
+    },
+    {
+      "id": "4",
+      "title": "4단계: 유효성 검증",
+      "file": "steps/4-4단계-유효성-검증.md",
+      "checks": []
+    },
+    {
+      "id": "5",
+      "title": "5단계: SKILL 사용하기",
+      "file": "steps/5-5단계-skill-사용하기.md",
+      "checks": []
+    },
+    {
+      "id": "6",
+      "title": "자주 묻는 질문 (FAQ)",
+      "file": "steps/6-자주-묻는-질문-faq.md",
+      "checks": []
+    }
+  ]
+}

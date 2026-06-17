@@ -1,0 +1,2 @@
+- 모든 소스 파일: `output/it-support-insights-v2/`
+- 최종 ZIP: `output/it-support-insights-v2.zip`

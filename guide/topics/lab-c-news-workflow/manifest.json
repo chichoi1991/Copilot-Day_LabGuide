@@ -1,0 +1,37 @@
+{
+  "title": "New Workflow로 뉴스 레포트 자동화 하기",
+  "description": "",
+  "estimatedMinutes": null,
+  "steps": [
+    {
+      "id": "1",
+      "title": "1. 개요 및 아키텍처",
+      "file": "steps/1-1.md",
+      "checks": []
+    },
+    {
+      "id": "2",
+      "title": "2. 사전 준비",
+      "file": "steps/2-2.md",
+      "checks": []
+    },
+    {
+      "id": "3",
+      "title": "3. SharePoint List 생성",
+      "file": "steps/3-3.md",
+      "checks": []
+    },
+    {
+      "id": "4",
+      "title": "4. Workflow 생성 — 8개 노드",
+      "file": "steps/4-4.md",
+      "checks": []
+    },
+    {
+      "id": "5",
+      "title": "5. 테스트 및 실행",
+      "file": "steps/5-5.md",
+      "checks": []
+    }
+  ]
+}

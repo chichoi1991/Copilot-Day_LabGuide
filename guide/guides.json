@@ -1,0 +1,12 @@
+{
+  "version": "2.0",
+  "defaultTopic": "lab-a-boardroom",
+  "topics": [
+    { "id": "lab-a-boardroom",      "title": "Lab A · 가상 임원회의 에이전트",                          "icon": "", "order": 1 },
+    { "id": "lab-b-cowork-plugin",  "title": "Lab B · Copilot Cowork 플러그인",                         "icon": "", "order": 2 },
+    { "id": "lab-c-news-workflow",  "title": "Lab C · Copilot Studio New Workflow로 뉴스 레포트 자동화", "icon": "", "order": 3 },
+    { "id": "lab-d-mcp",            "title": "Lab D · MCP로 확장하는 에이전트 아키텍쳐",                  "icon": "", "order": 4 },
+    { "id": "lab-e-cowork",         "title": "Lab E · Copilot Cowork 활용",                             "icon": "", "order": 5 },
+    { "id": "lab-f-report",         "title": "Lab F · 우리 조직 양식을 이용한 보고서 작성",               "icon": "", "order": 6 }
+  ]
+}

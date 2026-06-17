@@ -1,0 +1,193 @@
+{
+  "title": "MCP로 확장하는 에이전트 아키텍쳐",
+  "description": "",
+  "estimatedMinutes": null,
+  "chapters": [
+    {
+      "id": "ch1",
+      "title": "Hands-on Lab: Working with MCP in Copilot Studio Agents",
+      "steps": [
+        {
+          "id": "1.1",
+          "title": "What you will build",
+          "file": "steps/1-1-what-you-will-build.md",
+          "checks": []
+        },
+        {
+          "id": "1.2",
+          "title": "Before you start",
+          "file": "steps/1-2-before-you-start.md",
+          "checks": []
+        },
+        {
+          "id": "1.3",
+          "title": "Simple explanation: What is MCP?",
+          "file": "steps/1-3-simple-explanation-what-is-mcp.md",
+          "checks": []
+        }
+      ]
+    },
+    {
+      "id": "ch2",
+      "title": "Part 1: Create a new Copilot Studio agent with Microsoft Learn MCP",
+      "steps": [
+        {
+          "id": "2.1",
+          "title": "Step 1: Open Copilot Studio",
+          "file": "steps/2-1-step-1-open-copilot-studio.md",
+          "checks": []
+        },
+        {
+          "id": "2.2",
+          "title": "Step 2: Create a new agent",
+          "file": "steps/2-2-step-2-create-a-new-agent.md",
+          "checks": []
+        },
+        {
+          "id": "2.3",
+          "title": "Step 3: Set the agent name",
+          "file": "steps/2-3-step-3-set-the-agent-name.md",
+          "checks": []
+        },
+        {
+          "id": "2.4",
+          "title": "Step 4: Add clear instructions to the agent",
+          "file": "steps/2-4-step-4-add-clear-instructions-to-the-agent.md",
+          "checks": []
+        },
+        {
+          "id": "2.5",
+          "title": "Step 5: Turn on generative orchestration",
+          "file": "steps/2-5-step-5-turn-on-generative-orchestration.md",
+          "checks": []
+        },
+        {
+          "id": "2.6",
+          "title": "Step 6: Add the Microsoft Learn Docs MCP Server as a tool",
+          "file": "steps/2-6-step-6-add-the-microsoft-learn-docs-mcp-server-as-a-tool.md",
+          "checks": []
+        },
+        {
+          "id": "2.7",
+          "title": "Step 7: Confirm the tool was added",
+          "file": "steps/2-7-step-7-confirm-the-tool-was-added.md",
+          "checks": []
+        },
+        {
+          "id": "2.8",
+          "title": "Step 8: Test the agent",
+          "file": "steps/2-8-step-8-test-the-agent.md",
+          "checks": []
+        },
+        {
+          "id": "2.9",
+          "title": "Step 9: Observe what happened",
+          "file": "steps/2-9-step-9-observe-what-happened.md",
+          "checks": []
+        }
+      ]
+    },
+    {
+      "id": "ch3",
+      "title": "Part 2: Try the prebuilt agent with custom MCP servers",
+      "steps": [
+        {
+          "id": "3.1",
+          "title": "Step 1: Open the prebuilt agent",
+          "file": "steps/3-1-step-1-open-the-prebuilt-agent.md",
+          "checks": []
+        },
+        {
+          "id": "3.2",
+          "title": "Step 2: Copy and Paste Agent Instructions",
+          "file": "steps/3-2-step-2-copy-and-paste-agent-instructions.md",
+          "checks": []
+        },
+        {
+          "id": "3.3",
+          "title": "Step 3: Upload Agent Skills",
+          "file": "steps/3-3-step-3-upload-agent-skills.md",
+          "checks": []
+        },
+        {
+          "id": "3.4",
+          "title": "Step 4: Register the 4 MCP servers as tools",
+          "file": "steps/3-4-step-4-register-the-4-mcp-servers-as-tools.md",
+          "checks": []
+        },
+        {
+          "id": "3.5",
+          "title": "Step 5: Try example prompts",
+          "file": "steps/3-5-step-5-try-example-prompts.md",
+          "checks": []
+        },
+        {
+          "id": "3.6",
+          "title": "Step 6: Discuss what is different",
+          "file": "steps/3-6-step-6-discuss-what-is-different.md",
+          "checks": []
+        }
+      ]
+    },
+    {
+      "id": "ch4",
+      "title": "Concepts to remember",
+      "steps": [
+        {
+          "id": "4.1",
+          "title": "1. MCP is a connection standard",
+          "file": "steps/4-1-1.md",
+          "checks": []
+        },
+        {
+          "id": "4.2",
+          "title": "2. The agent decides when to use a tool",
+          "file": "steps/4-2-2.md",
+          "checks": []
+        },
+        {
+          "id": "4.3",
+          "title": "3. Tool descriptions matter",
+          "file": "steps/4-3-3.md",
+          "checks": []
+        },
+        {
+          "id": "4.4",
+          "title": "4. Copilot Studio supports Streamable HTTP for MCP",
+          "file": "steps/4-4-4.md",
+          "checks": []
+        },
+        {
+          "id": "4.5",
+          "title": "5. MCP can connect to Microsoft and custom sources",
+          "file": "steps/4-5-5.md",
+          "checks": []
+        }
+      ]
+    },
+    {
+      "id": "ch5",
+      "title": "Wrap-up",
+      "steps": [
+        {
+          "id": "5.1",
+          "title": "개요",
+          "file": "steps/5-1-개요.md",
+          "checks": []
+        }
+      ]
+    },
+    {
+      "id": "ch6",
+      "title": "References",
+      "steps": [
+        {
+          "id": "6.1",
+          "title": "개요",
+          "file": "steps/6-1-개요.md",
+          "checks": []
+        }
+      ]
+    }
+  ]
+}

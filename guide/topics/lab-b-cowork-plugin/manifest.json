@@ -1,0 +1,151 @@
+{
+  "title": "lab-b-cowork-plugin",
+  "description": "",
+  "estimatedMinutes": null,
+  "chapters": [
+    {
+      "id": "ch1",
+      "title": "학습자용 프롬프트 가이드 — 직접 해보며 배우기",
+      "steps": [
+        {
+          "id": "1.1",
+          "title": "0. 먼저 이 한 가지만 — 멘탈 모델",
+          "file": "steps/1-1-0.md",
+          "checks": []
+        },
+        {
+          "id": "1.2",
+          "title": "Cowork에서 플러그인 확인하기",
+          "file": "steps/1-2-cowork에서-플러그인-확인하기.md",
+          "checks": []
+        },
+        {
+          "id": "1.3",
+          "title": "1단계 · 워밍업 — \"에이전트가 뭘 할 수 있는지\" 스스로 알아내기",
+          "file": "steps/1-3-1단계-워밍업-에이전트가-뭘-할-수-있는지-스스로-알아내기.md",
+          "checks": []
+        },
+        {
+          "id": "1.4",
+          "title": "2단계 · 단일 분석 — \"실데이터 근거\"를 경험하기",
+          "file": "steps/1-4-2단계-단일-분석-실데이터-근거-를-경험하기.md",
+          "checks": []
+        },
+        {
+          "id": "1.5",
+          "title": "3단계 · 멀티포맷 산출물 — \"한 분석 → 네 가지 결과물\"",
+          "file": "steps/1-5-3단계-멀티포맷-산출물-한-분석-네-가지-결과물.md",
+          "checks": []
+        },
+        {
+          "id": "1.6",
+          "title": "4단계 · 두 MCP 교차 — 이 플러그인의 핵심 차별점 ★",
+          "file": "steps/1-6-4단계-두-mcp-교차-이-플러그인의-핵심-차별점.md",
+          "checks": []
+        },
+        {
+          "id": "1.7",
+          "title": "5단계 · 가드레일 체험 — \"안전성과 한계\"를 일부러 건드려 보기",
+          "file": "steps/1-7-5단계-가드레일-체험-안전성과-한계-를-일부러-건드려-보기.md",
+          "checks": []
+        },
+        {
+          "id": "1.8",
+          "title": "6단계 · 자유 실습 — 스스로 변형해 보기 (프롬프트 근육 만들기)",
+          "file": "steps/1-8-6단계-자유-실습-스스로-변형해-보기-프롬프트-근육-만들기.md",
+          "checks": []
+        },
+        {
+          "id": "1.9",
+          "title": "부록 · 프롬프트를 잘 쓰는 5가지 습관",
+          "file": "steps/1-9-부록-프롬프트를-잘-쓰는-5가지-습관.md",
+          "checks": []
+        }
+      ]
+    },
+    {
+      "id": "ch2",
+      "title": "빌드 프롬프트 — IT Support Insights v2 (Cowork 플러그인 패키지 생성)",
+      "steps": [
+        {
+          "id": "2.1",
+          "title": "Goal",
+          "file": "steps/2-1-goal.md",
+          "checks": []
+        },
+        {
+          "id": "2.2",
+          "title": "Output Path",
+          "file": "steps/2-2-output-path.md",
+          "checks": []
+        },
+        {
+          "id": "2.3",
+          "title": "Package Structure",
+          "file": "steps/2-3-package-structure.md",
+          "checks": []
+        },
+        {
+          "id": "2.4",
+          "title": "manifest.json (CANONICAL SHAPE)",
+          "file": "steps/2-4-manifest.md",
+          "checks": []
+        },
+        {
+          "id": "2.5",
+          "title": "Schema Rules (CRITICAL — 실패에서 학습)",
+          "file": "steps/2-5-schema-rules-critical-실패에서-학습.md",
+          "checks": []
+        },
+        {
+          "id": "2.6",
+          "title": "SKILL.md Frontmatter (5개 스킬 공통 형태)",
+          "file": "steps/2-6-skill.md",
+          "checks": []
+        },
+        {
+          "id": "2.7",
+          "title": "5개 스킬 (역할·트리거·본문 요구사항)",
+          "file": "steps/2-7-5개-스킬-역할-트리거-본문-요구사항.md",
+          "checks": []
+        },
+        {
+          "id": "2.8",
+          "title": "Icons (Microsoft Green)",
+          "file": "steps/2-8-icons-microsoft-green.md",
+          "checks": []
+        },
+        {
+          "id": "2.9",
+          "title": "Packaging",
+          "file": "steps/2-9-packaging.md",
+          "checks": []
+        },
+        {
+          "id": "2.10",
+          "title": "Validation Checklist (완료 선언 전)",
+          "file": "steps/2-10-validation-checklist-완료-선언-전.md",
+          "checks": []
+        },
+        {
+          "id": "2.11",
+          "title": "Upload Path (CRITICAL)",
+          "file": "steps/2-11-upload-path-critical.md",
+          "checks": []
+        },
+        {
+          "id": "2.12",
+          "title": "업로드 후 운영 메모",
+          "file": "steps/2-12-업로드-후-운영-메모.md",
+          "checks": []
+        },
+        {
+          "id": "2.13",
+          "title": "Done When",
+          "file": "steps/2-13-done-when.md",
+          "checks": []
+        }
+      ]
+    }
+  ]
+}

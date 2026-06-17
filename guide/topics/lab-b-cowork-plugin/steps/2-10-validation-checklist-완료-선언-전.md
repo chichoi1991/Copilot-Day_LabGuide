@@ -1,0 +1,13 @@
+- [ ] `manifest.json` 이 ZIP 루트에 있음
+- [ ] `$schema` 가 vDevPreview Teams 스키마 URL
+- [ ] `manifestVersion = "devPreview"`
+- [ ] `packageName = com.microsoft.demo.it-support-insights-v2`
+- [ ] `name.short = "IT Support Insights v2"`, `name.full` 에도 v2 포함
+- [ ] `id` 가 새 GUID v4
+- [ ] `agentSkills`(5개) 와 `agentConnectors`(2개) 가 TOP-LEVEL
+- [ ] 각 agentSkills 항목이 실제 `skills/<name>/` 폴더를 참조
+- [ ] 각 SKILL.md frontmatter 유효(name·description·license·metadata.author/version)
+- [ ] `validDomains` 에 두 MCP 호스트명 모두 포함
+- [ ] `color.png` 192×192 **Microsoft Green 배경**, `outline.png` 32×32 투명
+- [ ] `accentColor = "#107C10"`
+- [ ] ZIP 타임스탬프가 편집 이후로 갱신됨(재빌드 증거)

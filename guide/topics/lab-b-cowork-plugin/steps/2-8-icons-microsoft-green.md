@@ -1,0 +1,6 @@
+- `color.png`: **192×192 RGBA PNG**, 배경을 **Microsoft Green** 단색으로 채운다.
+  - 권장 색상: **#107C10** (Microsoft/Fluent green). 로고 그린을 원하면 **#7FBA00** 사용 가능.
+  - 중앙에 단순한 **흰색 글리프**(차트/티켓/문서 아이콘 등) 배치.
+- `outline.png`: **32×32 RGBA PNG**, 완전 투명 배경 + 흰색 2px stroke outline 글리프.
+- `accentColor` 도 아이콘 배경과 동일 계열(#107C10)로 맞춘다.
+- Pillow 로 생성하고, 외부 이미지 서비스는 사용하지 않는다.
