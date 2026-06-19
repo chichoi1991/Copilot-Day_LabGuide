@@ -69,9 +69,11 @@
     font-size: 20px; font-weight: 800; display: flex; align-items: center; justify-content: center;
     box-shadow: 0 4px 12px rgba(0,120,212,0.35);
   }
-  .lab-owner { font-size: 12px; color: var(--l-muted); }
-  .lab-owner a { text-decoration: none; }
-  .lab-owner a:hover { text-decoration: underline; }
+  .lab-owner { font-size: 12px; color: var(--l-muted); line-height: 1.5; }
+  .lab-owner .owner-name { color: var(--l-text); font-weight: 600; }
+  .lab-owner .owner-title { color: var(--l-muted); font-weight: 500; }
+  .lab-owner .owner-nick { display: inline-block; margin-top: 2px; color: var(--primary); font-weight: 600; text-decoration: none; }
+  .lab-owner .owner-nick:hover { text-decoration: underline; }
   .lab-card h3 { font-size: 18px; font-weight: 700; line-height: 1.4; margin-bottom: 10px; }
   .lab-summary { font-size: 13.5px; line-height: 1.65; color: var(--l-muted); flex: 1; margin-bottom: 18px; }
 
@@ -286,9 +288,11 @@ function labCard(lab) {
   const div = document.createElement('div');
   div.className = 'lab-card';
   const owner = lab.owner || {};
-  const ownerHtml = owner.github
-    ? `<a href="${escapeHtml(owner.github)}" target="_blank" rel="noopener">${escapeHtml(owner.name || '')}</a>`
-    : escapeHtml(owner.name || '');
+  const nameLine = `${escapeHtml(owner.name || '—')}${owner.title ? ' <span class="owner-title">' + escapeHtml(owner.title) + '</span>' : ''}`;
+  const nick = owner.nick || (owner.github ? owner.github.replace(/.*github\.com\//, '') : '');
+  const nickHtml = (owner.github && nick)
+    ? `<a class="owner-nick" href="${escapeHtml(owner.github)}" target="_blank" rel="noopener">@${escapeHtml(nick)}</a>`
+    : '';
   const dl = `<div class="lab-downloads">
       ${dlGroup('원본 교안', lab.original)}
       ${dlGroup('샘플', lab.samples)}
@@ -297,7 +301,7 @@ function labCard(lab) {
   div.innerHTML =
     `<div class="lab-card-top">
        <div class="lab-code">${escapeHtml(lab.code || '')}</div>
-       <div class="lab-owner">담당<br>${ownerHtml || '—'}</div>
+       <div class="lab-owner">담당<br><span class="owner-name">${nameLine}</span>${nickHtml ? '<br>' + nickHtml : ''}</div>
      </div>
      <h3>${escapeHtml(lab.title || '')}</h3>
      <p class="lab-summary">${escapeHtml(lab.summary || '')}</p>
