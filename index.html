@@ -336,7 +336,24 @@ function renderMarkdown(md) {
     const text = (arg && arg.text) || '';
     return `<a href="${escapeHtml(href)}" target="_blank" rel="noopener"${title}>${text}</a>`;
   };
+  renderer.image = function(arg) {
+    let href = (arg && arg.href) || '';
+    const title = (arg && arg.title) ? ` title="${escapeHtml(arg.title)}"` : '';
+    const text = (arg && arg.text) || '';
+    return `<img src="${escapeHtml(rewriteMediaSrc(href))}" alt="${escapeHtml(text)}"${title} loading="lazy">`;
+  };
   return marked.parse(md || '', { renderer });
+}
+
+// 가이드 이미지 경로 보정: 번들은 워크샵 포털(도메인 루트) 기준 절대경로(/media/...)를 사용하지만,
+// GitHub Pages 프로젝트 사이트는 base가 /<repo>/ 라 실제 파일 위치(guide/media/...)로 상대경로 보정한다.
+function rewriteMediaSrc(src) {
+  if (!src || /^(https?:)?\/\//i.test(src) || src.startsWith('data:')) return src;
+  let p = src;
+  if (p.startsWith('/media/')) p = 'guide' + p;        // /media/x → guide/media/x
+  else if (p.startsWith('media/')) p = 'guide/' + p;    // media/x → guide/media/x
+  else if (p.startsWith('/')) p = p.slice(1);           // 기타 절대경로 → 상대경로
+  return p.split('/').map(encodeURIComponent).join('/');
 }
 
 function populateLabSelect(activeId) {
