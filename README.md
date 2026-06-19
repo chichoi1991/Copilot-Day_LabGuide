@@ -9,7 +9,7 @@
 
 | # | 제목 | 담당자 | 가이드 문서 | 원본 다운로드 | 실습 링크 |
 |---|---|---|---|---|---|
-| A | [가상 임원회의 에이전트 (AI Board Room)](labs/lab-a-boardroom) | 최원영 ([@chichoi1991](https://github.com/chichoi1991)) | [배포 교안](guide/topics/lab-a-boardroom) | [원본 교안](labs/lab-a-boardroom/original/AI%20의사결정%20지원%20에이전트_LAB%20메뉴얼_202604.docx) | [실습 바로가기](guide/topics/lab-a-boardroom) |
+| A | [가상 임원회의 에이전트 (AI Board Room)](labs/lab-a-boardroom) | 최원영 | [배포 교안](guide/topics/lab-a-boardroom) | [원본 교안](labs/lab-a-boardroom/original/AI%20의사결정%20지원%20에이전트_LAB%20메뉴얼_202604.docx) | [실습 바로가기](guide/topics/lab-a-boardroom) |
 | B | [Copilot Cowork 플러그인](labs/lab-b-cowork-plugin) | 조윤호 | [배포 교안](guide/topics/lab-b-cowork-plugin) | [원본 교안](labs/lab-b-cowork-plugin/original/learner-prompt-guide.md) | [실습 바로가기](guide/topics/lab-b-cowork-plugin) |
 | C | [Copilot Studio New Workflow로 뉴스 레포트 자동화](labs/lab-c-news-workflow) | 이영서 ([@babycrowLee](https://github.com/babycrowLee)) | [배포 교안](guide/topics/lab-c-news-workflow) | [원본 교안](labs/lab-c-news-workflow/original/DailyBrief_HandsOn_Guide.docx) | [실습 바로가기](guide/topics/lab-c-news-workflow) |
 | D | [MCP로 확장하는 에이전트 아키텍쳐](labs/lab-d-mcp) | 김유연 ([@swannekim](https://github.com/swannekim)) | [배포 교안](guide/topics/lab-d-mcp) | [원본 교안](labs/lab-d-mcp/original/cps-lab-guide-kr.md) | [실습 바로가기](guide/topics/lab-d-mcp) |
