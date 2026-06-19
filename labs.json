@@ -1,0 +1,119 @@
+{
+  "$schema": "./labs.schema.json",
+  "version": "1.0",
+  "event": {
+    "name": "Copilot & Agent Day Seoul",
+    "date": "2026-06-18",
+    "description": "2026년 6월 18일에 진행된 Copilot & Agent Day 실습 랩 가이드 모음입니다. 각 랩의 가이드 문서, 원본 교안, 샘플/솔루션 파일을 한 곳에서 내려받을 수 있습니다."
+  },
+  "links": {
+    "guideTopicsBase": "guide/topics",
+    "labsBase": "labs"
+  },
+  "labs": [
+    {
+      "id": "lab-a-boardroom",
+      "code": "A",
+      "order": 1,
+      "title": "가상 임원회의 에이전트 (AI Board Room)",
+      "summary": "5명의 임원 페르소나가 경영 안건을 두고 토론하고 실행 권고안을 도출하는 AI Board Room 에이전트를 만듭니다. 회사 프로필 지식을 참고한 맞춤형 토론과 Word/PowerPoint 보고서 자동 생성까지 실습합니다.",
+      "owner": { "name": "최원영", "github": "https://github.com/chichoi1991" },
+      "guide": { "path": "guide/topics/lab-a-boardroom", "handsOn": "guide/topics/lab-a-boardroom" },
+      "original": [
+        { "name": "AI 의사결정 지원 에이전트 LAB 메뉴얼 (202604)", "path": "labs/lab-a-boardroom/original/AI 의사결정 지원 에이전트_LAB 메뉴얼_202604.docx" }
+      ],
+      "samples": [
+        { "name": "PYJ 엔터테인먼트 회사현황 프로필 (202606)", "path": "labs/lab-a-boardroom/samples/PYJ 엔터테인먼트 회사현황_프로필_202606.docx" },
+        { "name": "소이다 회사현황 프로필 (202606)", "path": "labs/lab-a-boardroom/samples/소이다 회사현황_프로필_202606.docx" },
+        { "name": "Virtual Boardroom 보고서 템플릿 (Word)", "path": "labs/lab-a-boardroom/samples/Virtual_Boardroom_보고서_템플릿.docx" },
+        { "name": "Virtual Boardroom 보고서 템플릿 (PowerPoint)", "path": "labs/lab-a-boardroom/samples/Virtual_Boardroom_보고서_템플릿.pptx" }
+      ],
+      "solution": []
+    },
+    {
+      "id": "lab-b-cowork-plugin",
+      "code": "B",
+      "order": 2,
+      "title": "Copilot Cowork 플러그인",
+      "summary": "Copilot Cowork 플러그인을 직접 만들고, 실데이터를 근거로 한 단일/멀티포맷 분석과 두 MCP 교차 호출을 경험합니다. 가드레일 체험과 자유 실습으로 프롬프트 근육을 키웁니다.",
+      "owner": { "name": "조윤호", "github": null },
+      "guide": { "path": "guide/topics/lab-b-cowork-plugin", "handsOn": "guide/topics/lab-b-cowork-plugin" },
+      "original": [
+        { "name": "Learner Prompt Guide", "path": "labs/lab-b-cowork-plugin/original/learner-prompt-guide.md" }
+      ],
+      "samples": [
+        { "name": "IT Support Insights 데이터 패키지", "path": "labs/lab-b-cowork-plugin/samples/it-support-insights.zip" }
+      ],
+      "solution": []
+    },
+    {
+      "id": "lab-c-news-workflow",
+      "code": "C",
+      "order": 3,
+      "title": "Copilot Studio New Workflow로 뉴스 레포트 자동화",
+      "summary": "Copilot Studio의 New Workflow 기능으로 뉴스를 수집·요약하여 일일 브리핑 레포트를 자동 생성하는 흐름을 구성합니다.",
+      "owner": { "name": "이영서", "github": null },
+      "guide": { "path": "guide/topics/lab-c-news-workflow", "handsOn": "guide/topics/lab-c-news-workflow" },
+      "original": [
+        { "name": "DailyBrief HandsOn Guide", "path": "labs/lab-c-news-workflow/original/DailyBrief_HandsOn_Guide.docx" }
+      ],
+      "samples": [
+        { "name": "BriefArchive (CSV)", "path": "labs/lab-c-news-workflow/samples/BriefArchive.csv" }
+      ],
+      "solution": []
+    },
+    {
+      "id": "lab-d-mcp",
+      "code": "D",
+      "order": 4,
+      "title": "MCP로 확장하는 에이전트 아키텍쳐",
+      "summary": "Microsoft Learn Docs MCP 서버를 도구로 연결하고, 4개의 MCP 서버를 등록한 사전 구성 에이전트로 MCP 기반 확장 아키텍처를 실습합니다.",
+      "owner": { "name": "김유연", "github": null },
+      "guide": { "path": "guide/topics/lab-d-mcp", "handsOn": "guide/topics/lab-d-mcp" },
+      "original": [
+        { "name": "CPS Lab Guide (KR)", "path": "labs/lab-d-mcp/original/cps-lab-guide-kr.md" }
+      ],
+      "samples": [],
+      "solution": [
+        { "name": "AgentDayHandsOn 솔루션 (Unmanaged)", "path": "labs/lab-d-mcp/solution/AgentDayHandsOn_1_0_0_3.zip" },
+        { "name": "AgentDayHandsOn 솔루션 (Managed)", "path": "labs/lab-d-mcp/solution/AgentDayHandsOn_1_0_0_3_managed.zip" }
+      ]
+    },
+    {
+      "id": "lab-e-cowork",
+      "code": "E",
+      "order": 5,
+      "title": "Copilot Cowork 활용",
+      "summary": "Copilot Cowork에서 Skill을 확인하고 나만의 Skill을 작성·검증·사용하는 전 과정을 실습합니다. EV 충전소 데이터를 활용한 인사이트 도출 예제를 다룹니다.",
+      "owner": { "name": "장보윤", "github": null },
+      "guide": { "path": "guide/topics/lab-e-cowork", "handsOn": "guide/topics/lab-e-cowork" },
+      "original": [
+        { "name": "Copilot Cowork HandsOn Lab Guide", "path": "labs/lab-e-cowork/original/Copilot Cowork - HandsOn Lab guide.md" }
+      ],
+      "samples": [
+        { "name": "EV 충전소 데이터 (2025, Excel)", "path": "labs/lab-e-cowork/samples/EV 충전소 데이터_2025.xlsx" },
+        { "name": "EV 충전소 인사이트 (2025, Word)", "path": "labs/lab-e-cowork/samples/EV 충전소 인사이트_2025.docx" },
+        { "name": "Skill 정의 (Skill.md)", "path": "labs/lab-e-cowork/samples/Skill.md" }
+      ],
+      "solution": []
+    },
+    {
+      "id": "lab-f-report",
+      "code": "F",
+      "order": 6,
+      "title": "우리 조직 양식을 이용한 보고서 작성",
+      "summary": "조직의 Word 양식과 프롬프트 템플릿을 활용해 금융감독 동향 보도자료를 요약하고 표준 보고서를 자동 작성하는 실습입니다.",
+      "owner": { "name": "김진우", "github": null },
+      "guide": { "path": "guide/topics/lab-f-report", "handsOn": "guide/topics/lab-f-report" },
+      "original": [],
+      "samples": [
+        { "name": "금융감독동향 보도자료 요약 - Word Connector 템플릿", "path": "labs/lab-f-report/samples/Template_docs_금융감독동향 보도자료 요약_Word Connector.docx" },
+        { "name": "금융감독동향 보도자료 요약 - 프롬프트 템플릿", "path": "labs/lab-f-report/samples/Template_docs_금융감독동향 보도자료 요약_프롬프트.docx" },
+        { "name": "예제 - IT부문 금융감독 동향 조사 보고서", "path": "labs/lab-f-report/samples/예제_IT부문_금융감독_동향_조사_보고서.docx" }
+      ],
+      "solution": [
+        { "name": "CopilotAgentDay Lab Word Template 솔루션", "path": "labs/lab-f-report/solution/CopilotAgentDay_Lab_Template_Word_1_0_0_1.zip" }
+      ]
+    }
+  ]
+}
