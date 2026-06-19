@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Copilot &amp; Agent Day Seoul — 실습 랩 가이드</title>
+<meta name="description" content="Copilot & Agent Day Seoul 핸즈온 랩 가이드 — 6개 랩의 단계별 실습 가이드와 자료 다운로드">
+<script src="https://cdn.jsdelivr.net/npm/marked@15.0.3/marked.min.js"></script>
+<style>
+  :root {
+    /* Landing (light) */
+    --l-bg: #f4f6fb;
+    --l-bg2: #ffffff;
+    --l-text: #1b1f2a;
+    --l-muted: #5b6478;
+    --l-border: #e2e6f0;
+    --l-card: #ffffff;
+    /* Brand */
+    --primary: #0078D4;
+    --primary-dark: #005A9E;
+    --accent: #00B7C3;
+    --success: #4caf50;
+    /* Viewer (dark) */
+    --d-bg: #1e1e2e;
+    --d-panel: #252535;
+    --d-border: #3a3a5a;
+    --d-text: #e6e6f4;
+    --d-muted: #9aa0bf;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Segoe UI', 'Malgun Gothic', sans-serif; background: var(--l-bg); color: var(--l-text); -webkit-font-smoothing: antialiased; }
+  a { color: var(--primary); }
+  .hidden { display: none !important; }
+
+  /* ============ LANDING (LIGHT) ============ */
+  #landing { min-height: 100vh; }
+  .hero {
+    background: linear-gradient(135deg, #0a2a52 0%, #0078D4 55%, #00B7C3 130%);
+    color: #fff; padding: 64px 24px 76px; text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.12), transparent 45%);
+    pointer-events: none;
+  }
+  .hero-inner { position: relative; max-width: 920px; margin: 0 auto; }
+  .hero .eyebrow { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.85; font-weight: 600; }
+  .hero h1 { font-size: 38px; font-weight: 800; margin: 14px 0 16px; line-height: 1.2; }
+  .hero p { font-size: 16px; line-height: 1.7; opacity: 0.94; max-width: 720px; margin: 0 auto; }
+  .hero-meta { display: inline-flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; justify-content: center; }
+  .hero-meta span { background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.28); padding: 7px 16px; border-radius: 30px; font-size: 13px; font-weight: 600; backdrop-filter: blur(4px); }
+
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .labs-section { margin-top: -44px; padding-bottom: 72px; position: relative; z-index: 2; }
+  .labs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 22px; }
+
+  .lab-card {
+    background: var(--l-card); border: 1px solid var(--l-border); border-radius: 16px;
+    padding: 24px 24px 20px; display: flex; flex-direction: column;
+    box-shadow: 0 6px 22px rgba(20,30,60,0.07); transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+  }
+  .lab-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(20,30,60,0.14); border-color: #cdd6ea; }
+  .lab-card-top { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .lab-code {
+    flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff;
+    font-size: 20px; font-weight: 800; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,120,212,0.35);
+  }
+  .lab-owner { font-size: 12px; color: var(--l-muted); }
+  .lab-owner a { text-decoration: none; }
+  .lab-owner a:hover { text-decoration: underline; }
+  .lab-card h3 { font-size: 18px; font-weight: 700; line-height: 1.4; margin-bottom: 10px; }
+  .lab-summary { font-size: 13.5px; line-height: 1.65; color: var(--l-muted); flex: 1; margin-bottom: 18px; }
+
+  .lab-downloads { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 18px; }
+  .dl-chip {
+    display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600;
+    color: #244; background: #eef7f8; border: 1px solid #cfeaed; padding: 5px 11px; border-radius: 20px;
+    text-decoration: none; transition: background 0.15s, border-color 0.15s; max-width: 100%;
+  }
+  .dl-chip:hover { background: #ddeff1; border-color: #aedde2; }
+  .dl-chip .dl-ico { font-size: 13px; }
+  .dl-chip span.dl-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 200px; }
+  .dl-group-label { width: 100%; font-size: 11px; font-weight: 700; letter-spacing: 0.4px; color: #8a93a8; text-transform: uppercase; margin: 6px 0 2px; }
+
+  .lab-cta {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--primary); color: #fff; text-decoration: none; font-weight: 700; font-size: 14px;
+    padding: 11px 16px; border-radius: 10px; transition: background 0.15s; cursor: pointer; border: none; width: 100%;
+  }
+  .lab-cta:hover { background: var(--primary-dark); }
+
+  .landing-foot { text-align: center; padding: 28px 24px 48px; color: var(--l-muted); font-size: 13px; border-top: 1px solid var(--l-border); }
+  .landing-foot a { color: var(--primary); text-decoration: none; }
+
+  /* ============ VIEWER (DARK) ============ */
+  #viewer { display: none; min-height: 100vh; background: var(--d-bg); color: var(--d-text); }
+  body.viewing { background: var(--d-bg); }
+  .v-header {
+    position: sticky; top: 0; z-index: 50; background: var(--primary-dark);
+    display: flex; align-items: center; gap: 16px; padding: 0 20px; height: 56px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  }
+  .v-home { display: inline-flex; align-items: center; gap: 7px; color: #fff; text-decoration: none; font-size: 13px; font-weight: 600; padding: 7px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.28); transition: background 0.15s; }
+  .v-home:hover { background: rgba(255,255,255,0.15); }
+  .v-title { color: #dbe8fb; font-size: 14px; font-weight: 600; flex-shrink: 0; }
+  .v-spacer { flex: 1; }
+  #labSelect {
+    background: var(--d-panel); color: var(--d-text); border: 1px solid var(--d-border);
+    border-radius: 8px; padding: 8px 12px; font-size: 13px; max-width: 360px; cursor: pointer;
+  }
+
+  .v-wrap { max-width: 960px; margin: 0 auto; padding: 28px 24px 80px; }
+  .v-lab-head { margin-bottom: 22px; }
+  .v-lab-head .v-code-badge { display: inline-block; background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; font-weight: 800; font-size: 12px; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.5px; }
+  .v-lab-head h2 { font-size: 25px; font-weight: 800; margin: 12px 0 8px; line-height: 1.3; }
+  .v-lab-head .v-desc { color: var(--d-muted); font-size: 14px; line-height: 1.65; }
+  .v-lab-head .meta-time { display: inline-block; margin-top: 8px; color: var(--accent); font-size: 12px; font-weight: 600; }
+
+  .progress-bar-wrap { margin: 18px 0 26px; }
+  .progress-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--d-muted); margin-bottom: 6px; }
+  .progress-bar { height: 7px; background: var(--d-border); border-radius: 4px; overflow: hidden; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: 4px; transition: width 0.4s; width: 0%; }
+
+  .chapter { margin-bottom: 26px; }
+  .chapter-title { font-size: 16px; font-weight: 700; color: var(--accent); padding: 10px 0 8px; border-bottom: 1px solid var(--d-border); margin-bottom: 14px; }
+
+  .step { background: var(--d-panel); border: 1px solid var(--d-border); border-radius: 12px; margin-bottom: 14px; overflow: hidden; }
+  .step-header { display: flex; align-items: center; gap: 12px; padding: 14px 18px; cursor: pointer; user-select: none; transition: background 0.15s; }
+  .step-header:hover { background: rgba(255,255,255,0.03); }
+  .step-num { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--d-border); color: var(--d-text); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; transition: background 0.2s; }
+  .step-num.done { background: var(--success); color: #fff; }
+  .step-title { flex: 1; font-size: 15px; font-weight: 600; }
+  .chevron { color: var(--d-muted); font-size: 11px; transition: transform 0.2s; }
+  .step.collapsed .chevron { transform: rotate(-90deg); }
+  .step.collapsed .step-content { display: none; }
+
+  .step-content { padding: 4px 22px 20px; font-size: 14.5px; line-height: 1.75; }
+  .step-content h1, .step-content h2, .step-content h3, .step-content h4 { margin: 18px 0 10px; line-height: 1.35; }
+  .step-content h1 { font-size: 21px; } .step-content h2 { font-size: 19px; } .step-content h3 { font-size: 16px; } .step-content h4 { font-size: 14.5px; }
+  .step-content p { margin: 10px 0; }
+  .step-content ul, .step-content ol { margin: 10px 0 10px 22px; }
+  .step-content li { margin: 5px 0; }
+  .step-content a { color: var(--accent); }
+  .step-content img { max-width: 100%; border-radius: 8px; margin: 10px 0; border: 1px solid var(--d-border); }
+  .step-content strong { color: #fff; }
+  .step-content code { background: rgba(0,183,195,0.16); padding: 1.5px 6px; border-radius: 4px; font-family: Consolas, monospace; font-size: 13px; color: var(--accent); }
+  .step-content blockquote { border-left: 3px solid var(--accent); background: rgba(0,183,195,0.07); padding: 10px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; color: #d4dcf0; }
+  .step-content table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13.5px; }
+  .step-content th, .step-content td { border: 1px solid var(--d-border); padding: 8px 12px; text-align: left; }
+  .step-content th { background: rgba(255,255,255,0.04); font-weight: 700; }
+
+  .code-pre-wrap { position: relative; margin: 12px 0; }
+  .code-pre-wrap pre { background: #161622; border: 1px solid var(--d-border); border-radius: 8px; padding: 14px 16px; overflow-x: auto; }
+  .code-pre-wrap pre code { background: none; color: #d8e0f5; padding: 0; font-size: 13px; }
+  .code-block { display: flex; align-items: center; gap: 10px; background: #161622; border: 1px solid var(--d-border); border-radius: 8px; padding: 8px 10px 8px 14px; margin: 12px 0; }
+  .code-block code { flex: 1; color: #d8e0f5; background: none; font-size: 13.5px; overflow-x: auto; }
+  .copy-btn { flex-shrink: 0; background: var(--primary); color: #fff; border: none; border-radius: 7px; padding: 6px 12px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.15s; }
+  .copy-btn:hover { background: var(--primary-dark); }
+  .copy-btn.copied { background: var(--success); }
+  .code-pre-wrap .copy-btn { position: absolute; top: 8px; right: 8px; opacity: 0.85; }
+  .code-pre-wrap:hover .copy-btn { opacity: 1; }
+
+  .check-item { display: flex; align-items: flex-start; gap: 10px; margin: 8px 0; padding: 9px 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--d-border); border-radius: 8px; }
+  .check-item input { margin-top: 3px; width: 16px; height: 16px; accent-color: var(--success); cursor: pointer; flex-shrink: 0; }
+  .check-item label { font-size: 13.5px; cursor: pointer; line-height: 1.5; }
+
+  .v-loading { color: var(--d-muted); text-align: center; padding: 60px 20px; font-size: 14px; }
+
+  .toast { position: fixed; bottom: 26px; left: 50%; transform: translateX(-50%) translateY(20px); background: #161622; color: #fff; border: 1px solid var(--d-border); padding: 11px 20px; border-radius: 10px; font-size: 13px; opacity: 0; pointer-events: none; transition: all 0.25s; z-index: 200; box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  @media (max-width: 560px) {
+    .hero h1 { font-size: 28px; }
+    .labs-grid { grid-template-columns: 1fr; }
+    .v-title { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ LANDING ============ -->
+<div id="landing">
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow" id="heroEyebrow">Hands-on Workshop</div>
+      <h1 id="heroTitle">Copilot &amp; Agent Day Seoul</h1>
+      <p id="heroDesc">실습 랩 가이드를 불러오는 중…</p>
+      <div class="hero-meta" id="heroMeta"></div>
+    </div>
+  </header>
+
+  <main class="container labs-section">
+    <div class="labs-grid" id="labsGrid"></div>
+  </main>
+
+  <footer class="landing-foot">
+    <p>각 랩의 단계별 가이드는 <strong>실습 가이드 보기</strong>에서, 원본·샘플·솔루션 파일은 카드의 다운로드 칩에서 받을 수 있습니다.</p>
+    <p style="margin-top:8px">소스 저장소: <a id="repoLink" href="https://github.com/chichoi1991/Copilot-Day_LabGuide" target="_blank" rel="noopener">chichoi1991/Copilot-Day_LabGuide</a></p>
+  </footer>
+</div>
+
+<!-- ============ VIEWER ============ -->
+<div id="viewer">
+  <div class="v-header">
+    <a class="v-home" href="#/">← 전체 랩</a>
+    <span class="v-title">실습 가이드</span>
+    <span class="v-spacer"></span>
+    <select id="labSelect" onchange="location.hash = '#/' + this.value"></select>
+  </div>
+  <div class="v-wrap">
+    <div class="v-lab-head" id="vLabHead"></div>
+    <div class="progress-bar-wrap">
+      <div class="progress-label"><span>진행률</span><span id="progressLabel">0 / 0 완료</span></div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+    <div id="stepsContainer"><div class="v-loading">가이드를 불러오는 중…</div></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ── Data ───────────────────────────────────────────────
+let LABS = null;     // labs.json
+let BUNDLE = null;   // dist/guide.bundle.json
+const checkedState = {};
+let dataReady = null;
+
+async function loadData() {
+  if (dataReady) return dataReady;
+  dataReady = (async () => {
+    const [labsRes, bundleRes] = await Promise.all([
+      fetch('labs.json', { cache: 'no-store' }),
+      fetch('dist/guide.bundle.json', { cache: 'no-store' })
+    ]);
+    if (!labsRes.ok) throw new Error('labs.json HTTP ' + labsRes.status);
+    if (!bundleRes.ok) throw new Error('guide.bundle.json HTTP ' + bundleRes.status);
+    LABS = await labsRes.json();
+    BUNDLE = await bundleRes.json();
+  })();
+  return dataReady;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+// encode a repo-relative path (keep slashes, encode spaces/한글)
+function encodePath(p) {
+  return String(p).split('/').map(encodeURIComponent).join('/');
+}
+
+// ── Landing render ─────────────────────────────────────
+function renderLanding() {
+  const ev = LABS.event || {};
+  document.getElementById('heroTitle').textContent = ev.name || 'Lab Guide';
+  document.getElementById('heroDesc').textContent = ev.description || '';
+  const meta = document.getElementById('heroMeta');
+  meta.innerHTML = '';
+  if (ev.date) meta.appendChild(chip('📅 ' + ev.date));
+  meta.appendChild(chip('🧪 ' + (LABS.labs || []).length + '개 랩'));
+
+  const grid = document.getElementById('labsGrid');
+  grid.innerHTML = '';
+  (LABS.labs || []).slice().sort((a, b) => (a.order || 0) - (b.order || 0)).forEach(lab => {
+    grid.appendChild(labCard(lab));
+  });
+}
+
+function chip(text) { const s = document.createElement('span'); s.textContent = text; return s; }
+
+function dlGroup(label, items) {
+  if (!items || !items.length) return '';
+  const chips = items.map(it =>
+    `<a class="dl-chip" href="${encodePath(it.path)}" download title="${escapeHtml(it.name)}">
+       <span class="dl-ico">⬇️</span><span class="dl-name">${escapeHtml(it.name)}</span>
+     </a>`).join('');
+  return `<div class="dl-group-label">${label}</div>${chips}`;
+}
+
+function labCard(lab) {
+  const div = document.createElement('div');
+  div.className = 'lab-card';
+  const owner = lab.owner || {};
+  const ownerHtml = owner.github
+    ? `<a href="${escapeHtml(owner.github)}" target="_blank" rel="noopener">${escapeHtml(owner.name || '')}</a>`
+    : escapeHtml(owner.name || '');
+  const dl = `<div class="lab-downloads">
+      ${dlGroup('원본 교안', lab.original)}
+      ${dlGroup('샘플', lab.samples)}
+      ${dlGroup('솔루션', lab.solution)}
+    </div>`;
+  div.innerHTML =
+    `<div class="lab-card-top">
+       <div class="lab-code">${escapeHtml(lab.code || '')}</div>
+       <div class="lab-owner">담당<br>${ownerHtml || '—'}</div>
+     </div>
+     <h3>${escapeHtml(lab.title || '')}</h3>
+     <p class="lab-summary">${escapeHtml(lab.summary || '')}</p>
+     ${dl}
+     <a class="lab-cta" href="#/${encodeURIComponent(lab.id)}">📖 실습 가이드 보기</a>`;
+  return div;
+}
+
+// ── Viewer render ──────────────────────────────────────
+function renderMarkdown(md) {
+  const renderer = new marked.Renderer();
+  renderer.code = function(arg) {
+    const text = (arg && typeof arg === 'object' && 'text' in arg) ? arg.text : String(arg ?? '');
+    const lang = (arg && typeof arg === 'object' && 'lang' in arg) ? (arg.lang || '') : '';
+    const esc = escapeHtml(text);
+    const dataAttr = encodeURIComponent(text);
+    const inlineLang = (lang === 'vm' || lang === 'ps' || lang === 'powershell' || lang === 'bash' || lang === 'sh');
+    if (inlineLang && !text.includes('\n')) {
+      return `<div class="code-block">
+        <code>${esc}</code>
+        <button class="copy-btn" data-text="${dataAttr}" onclick="copyText(this)">📋 복사</button>
+      </div>`;
+    }
+    return `<div class="code-pre-wrap">
+      <button class="copy-btn" data-text="${dataAttr}" onclick="copyText(this)">📋 복사</button>
+      <pre><code>${esc}</code></pre>
+    </div>`;
+  };
+  renderer.link = function(arg) {
+    const href = (arg && arg.href) || '';
+    const title = (arg && arg.title) ? ` title="${escapeHtml(arg.title)}"` : '';
+    const text = (arg && arg.text) || '';
+    return `<a href="${escapeHtml(href)}" target="_blank" rel="noopener"${title}>${text}</a>`;
+  };
+  return marked.parse(md || '', { renderer });
+}
+
+function populateLabSelect(activeId) {
+  const sel = document.getElementById('labSelect');
+  sel.innerHTML = '';
+  BUNDLE.topics.forEach(t => {
+    const opt = document.createElement('option');
+    opt.value = t.id;
+    opt.textContent = `${t.icon ? t.icon + ' ' : ''}${t.title}`;
+    if (t.id === activeId) opt.selected = true;
+    sel.appendChild(opt);
+  });
+}
+
+function renderStep(topicId, step) {
+  const domId = `${topicId}_${step.id}`;
+  const checksHtml = (step.checks || []).map((label, i) => {
+    const elId = `c_${domId}_${i}`;
+    const stateKey = `${topicId}|${step.id}|${i}`;
+    const checked = checkedState[stateKey] ? 'checked' : '';
+    return `<div class="check-item"><input type="checkbox" id="${elId}" data-key="${stateKey}" ${checked} onchange="onCheckChange(this)"><label for="${elId}">${escapeHtml(label)}</label></div>`;
+  }).join('');
+  const div = document.createElement('div');
+  div.className = 'step';
+  div.innerHTML =
+    `<div class="step-header" onclick="toggleStep(this)">
+       <div class="step-num">${escapeHtml(step.id)}</div>
+       <span class="step-title">${escapeHtml(step.title)}</span>
+       <span class="chevron">▼</span>
+     </div>
+     <div class="step-content">
+       ${renderMarkdown(step.markdown || '')}
+       ${checksHtml}
+     </div>`;
+  return div;
+}
+
+function renderViewer(labId) {
+  const topic = BUNDLE.topics.find(t => t.id === labId) || BUNDLE.topics[0];
+  if (!topic) return;
+  populateLabSelect(topic.id);
+
+  const labMeta = (LABS.labs || []).find(l => l.id === topic.id) || {};
+  const head = document.getElementById('vLabHead');
+  const parts = [];
+  parts.push(`<span class="v-code-badge">Lab ${escapeHtml(labMeta.code || '')}</span>`);
+  parts.push(`<h2>${escapeHtml(topic.title || labMeta.title || '')}</h2>`);
+  const desc = topic.description || labMeta.summary || '';
+  if (desc) parts.push(`<div class="v-desc">${escapeHtml(desc)}</div>`);
+  if (topic.estimatedMinutes) parts.push(`<div class="meta-time">⏱ 예상 ${topic.estimatedMinutes}분</div>`);
+  head.innerHTML = parts.join('');
+
+  const c = document.getElementById('stepsContainer');
+  c.innerHTML = '';
+  if (topic.chapters && topic.chapters.length) {
+    topic.chapters.forEach(ch => {
+      const chDiv = document.createElement('div');
+      chDiv.className = 'chapter';
+      const title = document.createElement('div');
+      title.className = 'chapter-title';
+      title.textContent = ch.title || '';
+      chDiv.appendChild(title);
+      (ch.steps || []).forEach(step => chDiv.appendChild(renderStep(topic.id, step)));
+      c.appendChild(chDiv);
+    });
+  } else if (topic.steps) {
+    topic.steps.forEach(step => c.appendChild(renderStep(topic.id, step)));
+  }
+  updateProgress();
+  window.scrollTo(0, 0);
+}
+
+// ── Interactions ───────────────────────────────────────
+function toggleStep(headerEl) {
+  headerEl.parentElement.classList.toggle('collapsed');
+}
+
+function onCheckChange(cb) {
+  checkedState[cb.dataset.key] = cb.checked;
+  updateProgress();
+}
+
+function updateProgress() {
+  const container = document.getElementById('stepsContainer');
+  const all = container.querySelectorAll('.check-item input[type=checkbox]');
+  const done = container.querySelectorAll('.check-item input:checked').length;
+  const total = all.length || 0;
+  const pct = total ? Math.round(done / total * 100) : 0;
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `${done} / ${total} 완료`;
+  container.querySelectorAll('.step').forEach(stepEl => {
+    const a = stepEl.querySelectorAll('.check-item input[type=checkbox]');
+    const d = stepEl.querySelectorAll('.check-item input:checked');
+    const num = stepEl.querySelector('.step-num');
+    if (num) num.className = 'step-num' + (a.length && d.length === a.length ? ' done' : '');
+  });
+}
+
+async function copyText(btn) {
+  const text = decodeURIComponent(btn.dataset.text || '');
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch {
+    const ta = document.createElement('textarea');
+    ta.value = text; document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch {}
+    document.body.removeChild(ta);
+  }
+  const orig = btn.textContent;
+  btn.textContent = '✅ 복사됨'; btn.classList.add('copied');
+  showToast('클립보드에 복사되었습니다');
+  setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+}
+
+let toastTimer = null;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 1800);
+}
+
+// ── Routing ────────────────────────────────────────────
+function parseHash() {
+  const h = location.hash.replace(/^#\/?/, '');
+  return h ? decodeURIComponent(h) : '';
+}
+
+async function route() {
+  try {
+    await loadData();
+  } catch (e) {
+    document.getElementById('stepsContainer').innerHTML =
+      `<div class="v-loading" style="color:#ff8a8a">데이터 로드 실패: ${escapeHtml(e.message)}<br><small>로컬에서는 file:// 로 열면 fetch가 막힙니다. HTTP 서버로 열어주세요.</small></div>`;
+    document.getElementById('heroDesc').textContent = '데이터 로드 실패: ' + e.message;
+    return;
+  }
+  const id = parseHash();
+  const landing = document.getElementById('landing');
+  const viewer = document.getElementById('viewer');
+  const validLab = id && (BUNDLE.topics || []).some(t => t.id === id);
+
+  if (validLab) {
+    landing.classList.add('hidden');
+    viewer.style.display = 'block';
+    document.body.classList.add('viewing');
+    renderViewer(id);
+  } else {
+    if (!document.getElementById('labsGrid').children.length) renderLanding();
+    viewer.style.display = 'none';
+    landing.classList.remove('hidden');
+    document.body.classList.remove('viewing');
+    if (id) location.replace('#/'); // unknown id → home
+    window.scrollTo(0, 0);
+  }
+}
+
+window.addEventListener('hashchange', route);
+window.addEventListener('DOMContentLoaded', route);
+</script>
+</body>
+</html>
