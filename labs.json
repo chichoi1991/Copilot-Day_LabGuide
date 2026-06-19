@@ -52,7 +52,7 @@
       "order": 3,
       "title": "Copilot Studio New Workflow로 뉴스 레포트 자동화",
       "summary": "Copilot Studio의 New Workflow 기능으로 뉴스를 수집·요약하여 일일 브리핑 레포트를 자동 생성하는 흐름을 구성합니다.",
-      "owner": { "name": "이영서", "github": null },
+      "owner": { "name": "이영서", "github": "https://github.com/babycrowLee" },
       "guide": { "path": "guide/topics/lab-c-news-workflow", "handsOn": "guide/topics/lab-c-news-workflow" },
       "original": [
         { "name": "DailyBrief HandsOn Guide", "path": "labs/lab-c-news-workflow/original/DailyBrief_HandsOn_Guide.docx" }
@@ -68,7 +68,7 @@
       "order": 4,
       "title": "MCP로 확장하는 에이전트 아키텍쳐",
       "summary": "Microsoft Learn Docs MCP 서버를 도구로 연결하고, 4개의 MCP 서버를 등록한 사전 구성 에이전트로 MCP 기반 확장 아키텍처를 실습합니다.",
-      "owner": { "name": "김유연", "github": null },
+      "owner": { "name": "김유연", "github": "https://github.com/swannekim" },
       "guide": { "path": "guide/topics/lab-d-mcp", "handsOn": "guide/topics/lab-d-mcp" },
       "original": [
         { "name": "CPS Lab Guide (KR)", "path": "labs/lab-d-mcp/original/cps-lab-guide-kr.md" }

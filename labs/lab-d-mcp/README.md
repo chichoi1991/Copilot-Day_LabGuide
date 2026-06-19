@@ -6,7 +6,7 @@ Microsoft Learn Docs MCP 서버를 도구로 연결하고, 4개의 MCP 서버를
 
 | 항목 | 내용 |
 |---|---|
-| 담당자 | 김유연 |
+| 담당자 | 김유연 ([@swannekim](https://github.com/swannekim)) |
 | 배포 교안 | [guide/topics/lab-d-mcp](../../guide/topics/lab-d-mcp) |
 | 실습 링크 | [배포 교안 바로가기](../../guide/topics/lab-d-mcp) |
 
