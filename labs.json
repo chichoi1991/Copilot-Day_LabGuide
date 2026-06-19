@@ -17,7 +17,7 @@
       "order": 1,
       "title": "가상 임원회의 에이전트 (AI Board Room)",
       "summary": "5명의 임원 페르소나가 경영 안건을 두고 토론하고 실행 권고안을 도출하는 AI Board Room 에이전트를 만듭니다. 회사 프로필 지식을 참고한 맞춤형 토론과 Word/PowerPoint 보고서 자동 생성까지 실습합니다.",
-      "owner": { "name": "최원영", "title": "매니저", "github": "https://github.com/chichoi1991", "nick": "chichoi1991" },
+      "owner": { "name": "최원영", "title": "매니저", "github": null, "nick": null },
       "guide": { "path": "guide/topics/lab-a-boardroom", "handsOn": "guide/topics/lab-a-boardroom" },
       "original": [
         { "name": "AI 의사결정 지원 에이전트 LAB 메뉴얼 (202604)", "path": "labs/lab-a-boardroom/original/AI 의사결정 지원 에이전트_LAB 메뉴얼_202604.docx" }
